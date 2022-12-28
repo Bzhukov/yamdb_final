@@ -1,4 +1,5 @@
 import datetime
+
 from django.contrib.auth.models import AbstractUser
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
@@ -21,7 +22,7 @@ class User(AbstractUser):
         (MODERATOR, 'moderator'),
         (USER, 'user'),
     ]
-    bio = models.TextField(null=True, blank=True, verbose_name='Биография',)
+    bio = models.TextField(null=True, blank=True, verbose_name='Биография', )
     role = models.CharField(
         max_length=80, choices=ROLES, default=USER, verbose_name='Роль',
     )
@@ -131,7 +132,7 @@ class Review(models.Model):
         on_delete=models.CASCADE,
         related_name='reviews',
     )
-    text = models.TextField(verbose_name='Текст',)
+    text = models.TextField(verbose_name='Текст', )
     author = models.ForeignKey(
         User,
         verbose_name='Автор',

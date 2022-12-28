@@ -1,9 +1,8 @@
 from django.shortcuts import get_object_or_404
 from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
-from rest_framework.validators import UniqueValidator
 from rest_framework.relations import SlugRelatedField
-
+from rest_framework.validators import UniqueValidator
 from reviews.models import Category, Comment, Genre, Review, Title, User
 
 
@@ -19,7 +18,6 @@ class GetTokenSerializer(serializers.ModelSerializer):
 
 
 class SignUpSerializer(serializers.ModelSerializer):
-
     username = serializers.CharField(
         validators=[
             UniqueValidator(queryset=User.objects.all())
@@ -64,7 +62,6 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class UserEditSerializer(serializers.ModelSerializer):
-
     class Meta:
         lookup_field = 'username'
         fields = ('username', 'email', 'first_name',
@@ -74,7 +71,6 @@ class UserEditSerializer(serializers.ModelSerializer):
 
 
 class CategorySerializer(serializers.ModelSerializer):
-
     class Meta:
         fields = ('name', 'slug',)
         model = Category
@@ -82,7 +78,6 @@ class CategorySerializer(serializers.ModelSerializer):
 
 
 class GenreSerializer(serializers.ModelSerializer):
-
     class Meta:
         fields = ('name', 'slug',)
         model = Genre
