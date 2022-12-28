@@ -19,7 +19,6 @@ class GetTokenSerializer(serializers.ModelSerializer):
 
 
 class SignUpSerializer(serializers.ModelSerializer):
-
     username = serializers.CharField(
         validators=[
             UniqueValidator(queryset=User.objects.all())
@@ -64,7 +63,6 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class UserEditSerializer(serializers.ModelSerializer):
-
     class Meta:
         lookup_field = 'username'
         fields = ('username', 'email', 'first_name',
@@ -74,7 +72,6 @@ class UserEditSerializer(serializers.ModelSerializer):
 
 
 class CategorySerializer(serializers.ModelSerializer):
-
     class Meta:
         fields = ('name', 'slug',)
         model = Category
@@ -82,7 +79,6 @@ class CategorySerializer(serializers.ModelSerializer):
 
 
 class GenreSerializer(serializers.ModelSerializer):
-
     class Meta:
         fields = ('name', 'slug',)
         model = Genre
