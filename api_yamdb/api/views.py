@@ -66,7 +66,7 @@ def get_jwt_token(request):
     )
 
     if default_token_generator.check_token(
-            user, serializer.validated_data['confirmation_code']
+        user, serializer.validated_data['confirmation_code']
     ):
         token = AccessToken.for_user(user)
         return Response({'token': str(token)}, status=status.HTTP_200_OK)
@@ -179,7 +179,7 @@ class ReviewViewSet(viewsets.ModelViewSet):
         title = get_object_or_404(Title, id=self.kwargs.get('title_id'))
         if self.action in ("create",):
             if Review.objects.filter(
-                    title=title, author=self.request.user
+                title=title, author=self.request.user
             ).exists():
                 raise ValidationError('Вы не можете добавить более'
                                       'одного отзыва на произведение')
