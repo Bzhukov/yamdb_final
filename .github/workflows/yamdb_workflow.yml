@@ -46,4 +46,4 @@ jobs:
         with:
           context: ./api_yamdb/
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/api_yamdb:latest
+          tags: ozzomad/api_yamdb:latest
