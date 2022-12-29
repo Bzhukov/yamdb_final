@@ -21,7 +21,7 @@ class User(AbstractUser):
         (MODERATOR, 'moderator'),
         (USER, 'user'),
     ]
-    bio = models.TextField(null=True, blank=True, verbose_name='Биография',)
+    bio = models.TextField(blank=True, verbose_name='Биография',)
     role = models.CharField(
         max_length=80, choices=ROLES, default=USER, verbose_name='Роль',
     )
@@ -110,7 +110,6 @@ class Title(models.Model):
     )
     description = models.TextField(
         verbose_name='Описание',
-        null=True,
         blank=True
     )
 
