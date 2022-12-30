@@ -109,4 +109,4 @@ docker-compose exec web python manage.py loaddata fixtures.json
 ```
 
 
-![image]("https://github.com/Bzhukov/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg")
+<img src="https://github.com/Bzhukov/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg">
