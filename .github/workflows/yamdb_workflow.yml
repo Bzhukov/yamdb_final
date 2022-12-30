@@ -49,7 +49,6 @@ jobs:
         refs/heads/master
         refs/heads/main
         ', github.ref)
-    github.ref == 'refs/heads/master' or github.ref == 'refs/heads/main'
     steps:
       - name: executing remote ssh commands to deploy
         uses: appleboy/ssh-action@master
