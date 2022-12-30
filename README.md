@@ -108,5 +108,7 @@ docker-compose exec web python manage.py loaddata fixtures.json
 /redoc/
 ```
 
+Пример развернутого проекта можно найти по адресу: http://bot-assist.ru/redoc
+
 
 <img src="https://github.com/Bzhukov/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg">
